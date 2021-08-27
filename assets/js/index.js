@@ -18,14 +18,14 @@ $("#update_user").submit(function(event){
             data[n['name']] = n['value']
     })
     var request = {
-        "url" : `http://localhost:3000/api/users/${data.id}`,
+        "url" : `https://helthacare.herokuapp.com/api/users/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
 
     $.ajax(request).done(function(response){
         alert("Data Updated Successfully!");
-        window.location.href="http://localhost:3000/index";
+        window.location.href="https://helthacare.herokuapp.com/index";
         
     })
 
@@ -37,7 +37,7 @@ if(window.location.pathname == "/index"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url" : `http://localhost:3000/api/users/${id}`,
+            "url" : `https://helthacare.herokuapp.com/api/users/${id}`,
             "method" : "DELETE"
         }
 
