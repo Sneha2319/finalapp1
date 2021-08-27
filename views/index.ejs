@@ -1,0 +1,56 @@
+
+<!-- include header -->
+    <%- include('include/_header') %>
+<!-- /include header -->
+
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/add-user" class="border-shadow">
+                    <span class="text-gradient">New User <i class="fas fa-user"></i></span>
+                </a>
+              <div class="col-md-4 offset-md-4 mt-5 border border-success pt-3">
+              <div class="input-group mb-3">
+                <input type="text" name="search-bar" id="search-bar" onchange="callMe();" class="form-control" placeholder="Search ......" aria-label="Recipient's username">
+                <div class="input-group-append">
+                  <span class="input-group-text"><i class="fa fa-search"></i></span>
+                </div>
+                </div>
+              </div>
+
+            <!-- form handling -->
+            <form action="/" method="POST">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>SR NO.</th>
+                            <th> Patient Name</th>
+                            <th> Main Complaint</th>
+                            <th> Past History</th>
+                            <th>Bp</th>
+                            <th> Pulse Rate</th>
+                            <th>LMP </th>
+                            <th>Investigation</th>
+                            <th>Treatment Given</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <%-  include('include/_show') %>
+       
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </main>
+<!-- /Main Site -->
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
+<script>
+    function callMe(){
+            window.location="http://localhost:3000/index?name="+document.getElementById("search-bar").value;
+    }
+</script>

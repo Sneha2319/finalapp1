@@ -1,0 +1,106 @@
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/index"><i class="fas fa-angle-double-left"></i> All Details</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Details</h2>
+            <span class="text-light">Use the below form to Update form</span>
+        </div>
+
+        <!-- add user form -->
+         <!-- form handling -->
+ <form method="POST" id="update_user" action="">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name" class="text-dark"><b>Patient Name</b></label>
+            <input type="hidden" name="id" value="<%= user._id%>">
+            <input type="text" name="name" value="<%= user.name%>" placeholder="Enter Patient Name">
+        </div>
+        <div class="form-group">
+            <label for="Main Complaint" class="text-bold"><b>Main Complaint</b></label>
+            <input type="text" name="main_complaint" value="<%= user.main_complaint%>" placeholder="Enter Complaint">
+        </div>
+        <div class="" id="leftbox_PastHistory">
+            <div class="form-group">
+                <label for="History" class="text"><b>Past History</b></label>
+                <div class="form-group">
+                    <%var str = user.past_history;
+                        split = str.split(",");
+                        %>
+                    <select multiple class="form-control" id="past_history" name="past_history[]">
+                                    <option value="diabetes" <%= split.includes("diabetes")? "selected": ""%>> Diabetes</option>
+                                    <option value="tuberculosis" <%= split.includes("tuberculosis")? "selected": ""%>>Tuberculosis</option>
+                                    <option value="Cancer"  <%= split.includes("Cancer")? "selected": ""%>>Cancer</option>
+                                    <option value="Other" <%= split.includes("Other")? "selected": ""%>>Other</option>
+                        </select>
+                </div>
+            </div>
+      
+        </div>
+        <div class="" id="bp_dd">
+            <div class="form-group">
+                <label for="bp" class="text"><b>Blood Pressure</b></label>
+                <div class="">
+                    <select class="form-control" id="bp" name="bp">
+                        <option value="low" <%= user.bp=="low"?"selected": ""%>>Low</option>
+                        <option value="moderate"  <%= user.bp=="moderate"?"selected": ""%>>Moderate</option>
+                        <option value="high"  <%= user.bp=="high"?"selected": ""%>>High</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+         <div class="" id="pr_dd">
+            <div class="form-group">
+                <label for="pulse_rate" class="text"><b>Pulse Rate</b></label>
+                <div>
+                    <select class="form-control" id="pulse_rate" name="pulse_rate">
+                        <option value="low" <%= user.pulse_rate=="low"?"selected": ""%>>Low</option>
+                        <option value="moderate"  <%= user.pulse_rate=="moderate"?"selected": ""%>>Moderate</option>
+                        <option value="high"  <%= user.pulse_rate=="high"?"selected": ""%>>High</option>
+                    </select>
+                </div>
+            </div>
+         </div>
+         <div class="" id="date_dd">
+            <div id="date_dd">
+                <label for="date"><b>LMP</b>:</label>
+                    <% var index=user.lmp.indexOf("T");
+                    var date = user.lmp.substring(0,index);%>
+                <input type="date" id="d" name="lmp" value="<%= date%>">
+            </div>
+           
+         </div>  
+         <div class="empty">
+             <label for=""></label>
+         </div>
+         <div class="form-group" id="investigate">
+                <label for="Investigation" class="text-dark"><b>Investigation</b></label>
+                <input type="text" name="investigation" value="<%= user.investigation%>" placeholder="Investigation">
+            </div>
+            <div class="form-group">
+                <label for="name" class="text-dark"><b>Treatment Given</b></label>
+                <input type="text" name="treatment_given" value="<%= user.treatment_given%>" placeholder="Treatment Given">
+            </div>      
+        </div> 
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Update</button>
+        </div>
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->

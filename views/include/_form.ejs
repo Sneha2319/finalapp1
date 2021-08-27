@@ -1,0 +1,88 @@
+ <!-- form handling -->
+ <form action="/api/users" method="POST" id="add_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name" class="text-dark"><b>Patient Name</b></label>
+        </div>
+        <div class="form-group">
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" placeholder="Enter Patient Name">
+        </div>
+         <div class="form-group">
+            <label for="Main Complaint" class="text-bold"><b>Main Complaint</b></label>
+            <input type="text" name="main_complaint" value="" placeholder="Enter Complaint">
+        </div>
+        <div class="form-group" id="leftbox_PastHistory">
+            <div class="form-group">
+                <label for="History" class="text"><b>Past History</b></label>
+               <div class="pasthistory">
+                <select multiple class="form-control pasthistory" id="past_history" name="past_history[]">
+                    <option value="diabetes">Diabetes</option>
+                    <option value="tuberculosis">Tuberculosis</option>
+                    <option value="Cancer">Cancer</option>
+                    <option value="Other">Other</option>
+                </select>
+               </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="pasthistory" id="bp_dd">
+                <div class="form-group " id="bp_dd">
+                    <label for="bp" class="text"><b>Blood Pressure</b></label>
+                    <div class="pasthistory">
+                        <select class="form-control" id="bp" name="bp">
+                            <option value="low">Low</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>    
+            </div>
+            <div class="" id="midbox">
+                <div class="form-group" id="midbox" class =>
+                    <div class="pasthistory" id="">
+                        <label for="pulse_rate" class="text"><b>Pulse Rate</b></label>
+                        <div class="pasthistory">
+                            <select class="form-control" id="pulse_rate" name="pulse_rate">
+                                <option value="low">Low</option>
+                                <option value="moderate">Moderate</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="" id="rightbox">
+                <div class="" id="date_dd" class = "rightbox" >
+                    <div id="date">
+                        <label for="date"><b>LMP</b>:</label>
+                        <div class="pasthistory">
+                            <input type="date" id="d" name="lmp">     
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="empty">
+            <label for=""></label>
+        </div>
+            <div class="form-group">
+                <div id="text_align" class="text_it">
+                    <label for="Investigation"class="text-dark "><b>Investigation</b></label>
+                </div>
+                    <input type="hidden" name="id" value="">
+                <div class="investigation">
+                    <input type="text" name="investigation" value="" placeholder="Investigation">
+                </div>
+            </div>        
+            <div class="form-group">
+                <label for="name" class="text-dark"><b>Treatment Given</b></label>
+                <input type="hidden" name="id" value="">
+                <input type="text" name="treatment_given" value="" placeholder="Treatment Given">
+                </div>               
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn text-dark update">Save</button>
+            </div>
+   </div> 
+</form>

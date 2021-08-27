@@ -1,0 +1,33 @@
+
+<%- include('header') -%>
+
+<div>
+    <img src="C:\Users\Pranali\Desktop\HospitalPro\assets\css" alt="" class="image">
+</div>
+<div class="text-center center-div" id="login">
+    <div class="container w-25 border py-5">
+        <div class="title pb-5">
+            <h2 class="font-weight-bold">Login</h2>
+            <span>Log in for the doctor</span>
+            <% if(locals.logout){ %>
+                <div class="alter alert-success text-center">
+                    <%= logout %>
+                </div>
+            <% } %>
+        </div>
+        <form action="/login" method="POST" class="pt-3">
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="email" name="email">
+                <small class="form-text text-muted text-left">Register email address</small>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="password">
+            </div>
+            <div>
+                <button type="submit"  class="btnsub text-white">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
